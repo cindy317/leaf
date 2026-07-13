@@ -70,6 +70,7 @@ async function initDatabase() {
 }
 
 initDatabase();
+console.log('🔑 DEEPSEEK_API_KEY 是否存在?', !!process.env.DEEPSEEK_API_KEY);
 
 // ---------- 初始化 DeepSeek 客户端 ----------
 const client = new OpenAI({
