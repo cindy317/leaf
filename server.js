@@ -76,7 +76,7 @@ console.log('🔑 DEEPSEEK_API_KEY 是否存在?', !!process.env.DEEPSEEK_API_KE
 
 const client = new OpenAI({
   baseURL: 'https://api.deepseek.com/v1',
-  apiKey: DEEPSEEK_API_KEY,
+  apiKey:process.env.DEEPSEEK_API_KEY,
 });
 
 // ---------- API 路由 ----------
