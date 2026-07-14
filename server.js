@@ -73,12 +73,17 @@ initDatabase();
 console.log('🔑 DEEPSEEK_API_KEY 是否存在?', !!process.env.DEEPSEEK_API_KEY);
 
 // ---------- 初始化 DeepSeek 客户端 ----------
+
 const client = new OpenAI({
   baseURL: 'https://api.deepseek.com/v1',
-  apiKey: process.env.DEEPSEEK_API_KEY,
+  apiKey: DEEPSEEK_API_KEY,
 });
 
 // ---------- API 路由 ----------
+// 添加根路径路由，处理对网站首页的访问
+app.get('/', (req, res) => {
+  res.send('🚀 专业信息推荐平台后端服务已启动！');
+});
 
 // 1. 获取所有问答
 app.get('/api/questions', async (req, res) => {
